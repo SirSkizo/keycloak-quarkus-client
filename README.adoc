@@ -774,6 +774,15 @@ export TKN=$(curl -s -X POST 'http://localhost:8090/auth/realms/trikorasolutions
 -d 'client_id=backend-service' | jq -r '.access_token')
 ----
 
+export TKN=$(curl -s -X POST 'http://localhost:8090/auth/realms/trikorasolutions/protocol/openid-connect/token' \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d 'client_secret=H1rDl7oxIkvnkt4vfZoD4Ssedx2nxJ1y' \
+-d 'grant_type=password' \
+-d 'username=tkraab@trikora_solutions' \
+-d 'password=trkaab@trikora_solutions' \
+-d 'client_id=grafana' | jq -r '.access_token')
+
+
 == Common HTTP errors
 
 === 401 Unauthorized
